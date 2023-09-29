@@ -1,3 +1,33 @@
+// import {
+//   Description,
+//   Hero,
+//   Layout,
+//   PageNavigation,
+//   Products,
+// } from "../components";
+
+// const HomePage = () => {
+//   return (
+//     <main>
+//       <Layout />
+//       <section className="">
+//         <Hero />
+//       </section>
+//       <section className="">
+//         <Description />
+//       </section>
+//       <section className="">
+//         <Products />
+//       </section>
+//       <section className="">
+//         <PageNavigation />
+//       </section>
+//     </main>
+//   );
+// };
+
+// export default HomePage;
+
 import React from "react";
 import {
   Hero,
@@ -7,19 +37,23 @@ import {
   PageNavigation,
 } from "../components";
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <>
-      <Hero />
-      <div className="">
-        <h1 className="">Samurai King Resting</h1>
-        <button className="">ADD TO CART</button>
-        <img src="" alt="photo" className="" />
-      </div>
-      <div>{["Products"].map((Products) => products)}</div>
-      <PageNavigation />
-    </>
+    <main>
+      <section className="xl:padding-1 wide:padding-r padding-b">
+        <Hero />
+      </section>
+      <section className="padding">
+        <Description />
+      </section>
+      <section className="padding">
+        <Products />
+      </section>
+      <section className="padding">
+        <PageNavigation />
+      </section>
+    </main>
   );
 };
 
-export default Home;
+export default HomePage;
