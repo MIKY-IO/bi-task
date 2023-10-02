@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section id="home" className=" mx-auto my-0  p-4 relative ">
-      <div className="flex justify-center items-center py-5">
+    <section id="home" className=" mx-auto my-0  relative ">
+      <div className="flex justify-center items-center py-6">
         <div className=" flex-1 justify-items-start place-items-start ">
-          <h1 className="font-bold text-lg ">Samurai King Resting</h1>
+          <h1 className="font-bold text-2xl ">Samurai King Resting</h1>
         </div>
         <div className="">
           <Button className="" />

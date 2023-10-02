@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  padding: 3rem;
+  padding: 4rem;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 .nav-container {
-  @apply flex justify-between relative mx-[18px] my-1.5;
+  @apply flex justify-between relative;
 }
 
 .cart-icon {

@@ -39,17 +39,17 @@ import {
 
 const HomePage = () => {
   return (
-    <main>
-      <section className="xl:padding-1 wide:padding-r padding-b">
+    <main className="mx-auto max-w-screen-xl md:h-full">
+      <section className="">
         <Hero />
       </section>
-      <section className="padding">
+      <section className="">
         <Description />
       </section>
-      <section className="padding">
+      <section className="">
         <Products />
       </section>
-      <section className="padding">
+      <section className="">
         <PageNavigation />
       </section>
     </main>
