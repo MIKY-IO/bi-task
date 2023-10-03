@@ -17,14 +17,14 @@ import {
   nature2,
 } from "../public/pictures/products/index.js";
 
-export const products = [
+export const productsData = [
   {
-    name: "Red Bench",
+    name: "Pyro is not CRIME",
     category: "people",
     price: 3.89,
     currency: "USD",
     image: {
-      src: { people1 },
+      src: people1,
       alt: "people foto",
     },
     bestseller: true,
@@ -32,12 +32,12 @@ export const products = [
     details: null,
   },
   {
-    name: "Man",
+    name: "Where am I",
     category: "people",
     price: 100,
     currency: "USD",
     image: {
-      src: { people2 },
+      src: people2,
       alt: "",
     },
     bestseller: false,
@@ -45,12 +45,12 @@ export const products = [
     details: null,
   },
   {
-    name: "Colorful",
+    name: "Colorful Art",
     category: "premium",
     price: 155,
     currency: "USD",
     image: {
-      src: { premium1 },
+      src: premium1,
       alt: "",
     },
     bestseller: false,
@@ -58,12 +58,12 @@ export const products = [
     details: null,
   },
   {
-    name: "Colorfu Yellow",
+    name: "Colorful Yellow",
     category: "premium",
     price: 189,
     currency: "USD",
     image: {
-      src: { premium2 },
+      src: premium2,
       alt: "",
     },
     bestseller: false,
@@ -71,12 +71,12 @@ export const products = [
     details: null,
   },
   {
-    name: "Cat",
+    name: "Where is Cat?",
     category: "pets",
     price: 55,
     currency: "USD",
     image: {
-      src: { pets1 },
+      src: pets1,
       alt: "",
     },
     bestseller: false,
@@ -84,12 +84,12 @@ export const products = [
     details: null,
   },
   {
-    name: "Dog",
+    name: "Dog Mood",
     category: "pets",
     price: 66,
     currency: "USD",
     image: {
-      src: { pets2 },
+      src: pets2,
       alt: "",
     },
     bestseller: false,
@@ -103,7 +103,7 @@ export const products = [
     price: 93.89,
     currency: "USD",
     image: {
-      src: { food1 },
+      src: food1,
       alt: "",
     },
     bestseller: false,
@@ -111,12 +111,12 @@ export const products = [
     details: null,
   },
   {
-    name: "Egg tower",
+    name: "Egg Tower",
     category: "food",
     price: 91.89,
     currency: "USD",
     image: {
-      src: { food2 },
+      src: food2,
       alt: "",
     },
     bestseller: false,
@@ -125,12 +125,12 @@ export const products = [
   },
 
   {
-    name: "Fruit",
+    name: "Fruit Idea",
     category: "food",
     price: 89.89,
     currency: "USD",
     image: {
-      src: { food3 },
+      src: food3,
       alt: "",
     },
     bestseller: false,
@@ -139,12 +139,12 @@ export const products = [
   },
 
   {
-    name: "River",
+    name: "River-land",
     category: "landmarks",
     price: 99.99,
     currency: "USD",
     image: {
-      src: { landmarks1 },
+      src: landmarks1,
       alt: "",
     },
     bestseller: false,
@@ -153,12 +153,12 @@ export const products = [
   },
 
   {
-    name: "Hill",
+    name: "Hill Šobes",
     category: "landmarks",
     price: 99.99,
     currency: "USD",
     image: {
-      src: { landmarks2 },
+      src: landmarks2,
       alt: "",
     },
     bestseller: false,
@@ -167,12 +167,12 @@ export const products = [
   },
 
   {
-    name: "Prague",
+    name: "Prague City",
     category: "cities",
     price: 69.99,
     currency: "USD",
     image: {
-      src: { cities1 },
+      src: cities1,
       alt: "",
     },
     bestseller: false,
@@ -181,12 +181,12 @@ export const products = [
   },
 
   {
-    name: "Znojmo",
+    name: "Znojmo town",
     category: "cities",
     price: 39.99,
     currency: "USD",
     image: {
-      src: { cities2 },
+      src: cities2,
       alt: "",
     },
     bestseller: false,
@@ -195,12 +195,12 @@ export const products = [
   },
 
   {
-    name: "Moravia",
+    name: "Moravia town",
     category: "cities",
     price: 9.99,
     currency: "USD",
     image: {
-      src: { cities3 },
+      src: cities3,
       alt: "",
     },
     bestseller: false,
@@ -209,12 +209,12 @@ export const products = [
   },
 
   {
-    name: "Claudy",
+    name: "Claudy Nature",
     category: "nature",
     price: 19.99,
     currency: "USD",
     image: {
-      src: { nature1 },
+      src: nature1,
       alt: "",
     },
     bestseller: false,
@@ -223,12 +223,12 @@ export const products = [
   },
 
   {
-    name: "Mountain",
+    name: "Smoky Mountain",
     category: "nature",
     price: 7.99,
     currency: "USD",
     image: {
-      src: { nature2 },
+      src: nature2,
       alt: "",
     },
     bestseller: false,
