@@ -11,7 +11,9 @@ const Description = () => {
         <h1 className="font-bold text-lg mb-1">
           About the Samurai King Resting
         </h1>
-        <h1 className="font-bold text-lg text-[#bbbbbb] mb-2">Pets</h1>
+        <h1 className="font-bold text-lg text-[#656565] mb-2 hidden lg:block">
+          Pets
+        </h1>
         <div className="text-sm">
           <p className="">
             So how did the classical Latin become so incoherent? According to

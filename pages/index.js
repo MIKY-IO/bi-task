@@ -29,13 +29,7 @@
 // export default HomePage;
 
 import React from "react";
-import {
-  Hero,
-  Products,
-  Description,
-  Layout,
-  PageNavigation,
-} from "../components";
+import { Hero, ProductSection, Description, Layout } from "../components";
 
 const HomePage = () => {
   return (
@@ -47,10 +41,7 @@ const HomePage = () => {
         <Description />
       </section>
       <section className="">
-        <Products />
-      </section>
-      <section className="">
-        <PageNavigation />
+        <ProductSection />
       </section>
     </main>
   );

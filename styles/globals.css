@@ -14,13 +14,19 @@ body {
     margin: 0 auto;
   }
 }
-
 .nav-container {
   @apply flex justify-between relative;
 }
 
 .cart-icon {
   @apply text-[40px] text-black cursor-pointer relative transition-transform duration-[0.4s] ease-[ease] bg-transparent border-[none];
+}
+
+.products-container {
+  @apply flex flex-wrap justify-center gap-[15px] w-full mt-5;
+}
+.product-card {
+  @apply cursor-pointer transition-transform duration-[0.5s] ease-[ease] text-[#324d67] scale-100;
 }
 
 @layer utilities {
