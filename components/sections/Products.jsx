@@ -3,23 +3,18 @@ import Image from "next/image";
 import Button from "../ui/Button";
 
 const Products = ({ image, category, name, price }) => {
-  const [isHovered, setIsHovered] = useState(false);
   console.log("hi");
 
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full relative">
-      <div
-        className="relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <Image src={image.src} alt="pictures" className="h-[400px] w-[238px]" />
+      <div className="relative w-[238px] group">
+        <Image src={image.src} alt="pictures" className="w-full aspect-[2/3]" />
 
-        {isHovered && (
-          <div className="absolute bottom-0 left-0 right-0 ">
-            <Button />
-          </div>
-        )}
+        <div className="hidden absolute bottom-0 left-0 right-0 group-hover:block">
+          <button className="flex justify-center items-center h-11 w-full border text-lg bg-black text-white border-black px-2">
+            ADD TO CART
+          </button>
+        </div>
       </div>
 
       <p className="font-bold text-lg text-[#656565]">{category}</p>
