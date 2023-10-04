@@ -29,14 +29,37 @@ body {
   @apply cursor-pointer transition-transform duration-[0.5s] ease-[ease] text-[#324d67] scale-100;
 }
 
-.custom-checkbox input:checked + .nextui-checkbox-box::before {
-  border: 2px solid #000;
-  background-color: transparent;
+input[type="checkbox"] {
+  appearance: none;
+  display: none;
 }
 
-.custom-checkbox input:checked + .nextui-checkbox-box::after {
-  border-left: 2px solid #000;
-  border-top: 2px solid #000;
+/* Style the custom checkbox */
+.custom-checkbox {
+  width: 8em; /* Adjusted width */
+  height: 8em; /* Adjusted height */
+  background-color: #fff;
+  border: 0.15em solid #000;
+  border-radius: 0.15em;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Style the checkmark icon (initially hidden) */
+.custom-checkbox::before {
+  content: "\2713"; /* Unicode checkmark character */
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  color: #000;
+}
+
+/* Style the custom checkbox when checked */
+input[type="checkbox"]:checked + .custom-checkbox::before {
+  display: block;
 }
 
 @layer utilities {
