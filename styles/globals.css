@@ -36,8 +36,7 @@ input[type="checkbox"] {
 
 /* Style the custom checkbox */
 .custom-checkbox {
-  width: 8em; /* Adjusted width */
-  height: 8em; /* Adjusted height */
+  /* Adjusted height */
   background-color: #fff;
   border: 0.15em solid #000;
   border-radius: 0.15em;
@@ -54,6 +53,7 @@ input[type="checkbox"] {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1em;
+  font-weight: bold;
   color: #000;
 }
 

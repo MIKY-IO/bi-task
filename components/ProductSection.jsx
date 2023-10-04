@@ -6,7 +6,7 @@ import SideFilter from "./sections/SideFilter";
 
 const ProductSection = () => {
   return (
-    <section id="products" className="mt-6 border-2 border-red-500 w-full">
+    <section id="products" className="mt-6  w-full">
       <div className="flex justify-between items-center max-container">
         <div className="flex justify-between gap-2">
           <h1 className="text-2xl font-bold">Photography /</h1>
