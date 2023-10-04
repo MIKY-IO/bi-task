@@ -29,6 +29,16 @@ body {
   @apply cursor-pointer transition-transform duration-[0.5s] ease-[ease] text-[#324d67] scale-100;
 }
 
+.custom-checkbox input:checked + .nextui-checkbox-box::before {
+  border: 2px solid #000;
+  background-color: transparent;
+}
+
+.custom-checkbox input:checked + .nextui-checkbox-box::after {
+  border-left: 2px solid #000;
+  border-top: 2px solid #000;
+}
+
 @layer utilities {
   .padding {
     @apply sm:px-16 px-8 sm:py-24 py-12;

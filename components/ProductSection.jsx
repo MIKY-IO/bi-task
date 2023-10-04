@@ -2,6 +2,7 @@ import Image from "next/image";
 import sortIcon from "../public/pictures/sort.png";
 import { productsData } from "../data";
 import Products from "./sections/Products.jsx";
+import SideFilter from "./sections/SideFilter";
 
 const ProductSection = () => {
   return (
@@ -27,17 +28,16 @@ const ProductSection = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-between items-center mt-8">
-        <div className="w-1/4">sloupec</div>
+      <div className="flex mt-10">
+        <div className="w-1/4 ">
+          <div className="">
+            <SideFilter />
+          </div>
+        </div>
         <div className="w-3/4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 sm:gap-4 gap-12 ">
           {productsData.map((product) => (
             <Products key={product.name} {...product} />
           ))}
-
-          {/* <Image src={image} className="h-[400px] w-[238px]" />
-        <p className="text-sm">{category}</p>
-        <p className="font-bold text-lg">{name}</p>
-        <p className="text-sm">${price}</p> */}
         </div>
       </div>
     </section>

@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Button from "../ui/Button";
 
 const Products = ({ image, category, name, price }) => {
-  console.log("hi");
-
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full relative">
       <div className="relative w-[238px] group">

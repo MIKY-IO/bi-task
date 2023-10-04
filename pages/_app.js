@@ -21,12 +21,15 @@
 import React from "react";
 import "../styles/globals.css";
 import { Layout } from "../components";
+import { NextUIProvider } from "@nextui-org/react";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <NextUIProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </NextUIProvider>
   );
 }
 
