@@ -62,6 +62,10 @@ input[type="checkbox"]:checked + .custom-checkbox::before {
   display: block;
 }
 
+.cart-item-qty {
+  @apply absolute text-xs text-[#eee] bg-[#000000] w-[20px] h-[20Px] text-sm text-center font-semibold  -right-2;
+}
+
 @layer utilities {
   .padding {
     @apply sm:px-16 px-8 sm:py-24 py-12;

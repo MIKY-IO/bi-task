@@ -85,53 +85,53 @@ const SideFilter = () => {
       </div>
 
       <div className="flex items-center relative">
-        <div className="w-5/6 border-b-4 border-b-[#E5E5E5]"></div>
+        <div className="w-5/6 border-b-2 border-b-[#C2C2C2]"></div>
         <div className="w-1/4"></div>
       </div>
 
-      <div className="flex-col text-left space-y-5 pt-6">
+      <div className="flex-col text-left space-y-5 pt-6 ">
         <h2 className="text-xl font-bold">Price range</h2>
 
-        <div className="group flex items-center">
-          <input type="checkbox" id="peopleCheckbox" className="hidden" />
+        <div className="group flex items-center pt-4">
+          <input type="checkbox" id="lowerCheckbox" className="hidden" />
           <label
-            htmlFor="peopleCheckbox"
+            htmlFor="lowerCheckbox"
             className="custom-checkbox w-5 h-5 bg-white border-2 border-black rounded cursor-pointer group-hover:border-black"
           ></label>
-          <span htmlFor="peopleCheckbox" className="cursor-pointer pl-2">
+          <span htmlFor="lowerCheckbox" className="cursor-pointer pl-2">
             Lower than $20
           </span>
         </div>
 
         <div className="group flex items-center">
-          <input type="checkbox" id="premiumCheckbox" className="hidden" />
+          <input type="checkbox" id="20100Checkbox" className="hidden" />
           <label
-            htmlFor="premiumCheckbox"
+            htmlFor="20100Checkbox"
             className="custom-checkbox w-5 h-5 bg-white border-2 border-black rounded cursor-pointer group-hover:border-black"
           ></label>
-          <span htmlFor="premiumCheckbox" className="cursor-pointer pl-2">
+          <span htmlFor="20100Checkbox" className="cursor-pointer pl-2">
             $20 - $100
           </span>
         </div>
 
         <div className="group flex items-center">
-          <input type="checkbox" id="petsCheckbox" className="hidden" />
+          <input type="checkbox" id="100200Checkbox" className="hidden" />
           <label
-            htmlFor="petsCheckbox"
+            htmlFor="100200Checkbox"
             className="custom-checkbox w-5 h-5 bg-white border-2 border-black rounded cursor-pointer group-hover:border-black"
           ></label>
-          <span htmlFor="petsCheckbox" className="cursor-pointer pl-2">
+          <span htmlFor="100200Checkbox" className="cursor-pointer pl-2">
             $100 - $200
           </span>
         </div>
 
         <div className="group flex items-center">
-          <input type="checkbox" id="foodCheckbox" className="hidden" />
+          <input type="checkbox" id="moreCheckbox" className="hidden" />
           <label
-            htmlFor="foodCheckbox"
+            htmlFor="moreCheckbox"
             className="custom-checkbox w-5 h-5 bg-white border-2 border-black rounded cursor-pointer group-hover:border-black"
           ></label>
-          <span htmlFor="foodCheckbox" className="cursor-pointer pl-2">
+          <span htmlFor="moreCheckbox" className="cursor-pointer pl-2">
             More than $200
           </span>
         </div>
