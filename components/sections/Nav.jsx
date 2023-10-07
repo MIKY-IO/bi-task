@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../../public/pictures/logo.png";
 import Image from "next/image";
-// import Link from "next/link";
-// import { AiOutlineShopping } from "react-icons/ai";
-import { BsCart3 } from "react-icons/bs";
 
-// import { Cart } from "./";
-// import { useStateContext } from "../context/StateContext";
+// import { AiOutlineShopping } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
+import Cart from "../sections/Cart";
+import { useStateContext } from "../../context/StateContext";
 
 const Nav = () => {
-  //   const { showCart, setShowCart, totalQuantities } = useStateContext();
+  const { showCart, setShowCart, totalQuantities } = useStateContext();
 
   return (
     <div className="nav-container my-0 pb-6 border-b-4 border-b-[#E5E5E5] mx-auto max-w-screen-xl">
@@ -20,15 +20,14 @@ const Nav = () => {
       <button
         type="button"
         className="cart-icon"
-        onClick=""
-        // onClick={() => setShowCart(true)}
+        onClick={() => {
+          setShowCart(!showCart);
+        }}
       >
-        <BsCart3 />
-        <span className="cart-item-qty">1</span>
-        {/* <span className="cart-item-qty">{totalQuantities}</span> */}
+        <AiOutlineShoppingCart />
+        <span className="cart-item-qty">{totalQuantities}</span>
       </button>
-
-      {/* {showCart && <Cart />} */}
+      {showCart && <Cart />}
     </div>
   );
 };
