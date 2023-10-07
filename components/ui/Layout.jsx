@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
       <Head>
         <title>MikyIO-BI-task</title>
       </Head>
-      <header>
+      <header className="border-b-4 border-b-[#E5E5E5]">
         <Nav />
       </header>
       <main className="">{children}</main>
