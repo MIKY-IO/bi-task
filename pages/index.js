@@ -28,14 +28,15 @@
 
 // export default HomePage;
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Hero, ProductSection, Description, Layout } from "../components";
 import { productsData } from "../data";
 
 export async function getServerSideProps({ params, query }) {
   console.log({ params, query });
+  console.log("i am in server");
   // page i get from query
-  const page = query.page ?? 1;
+  const page = Number(query.page) ?? 1;
   let limit = 6;
   if (query.limit && query.limit >= 6 && query.limit <= 12) {
     limit = query.limit;
@@ -47,11 +48,11 @@ export async function getServerSideProps({ params, query }) {
   }
   const skip = (page - 1) * limit;
   const newProducts = productsData.slice(skip, page * limit);
-
+  console.log({ newProducts, page, limit, skip, sortKeyString });
   return {
     props: {
       count: productsData.length,
-      page,
+      page: Number(page),
       limit,
       skip,
       sortKey: sortKeyString,
@@ -69,6 +70,13 @@ const HomePage = (props) => {
     skip,
     sortKey,
   });
+
+  const [fetchedProducts, setFetchedProducts] = useState([]);
+
+  useEffect(() => {
+    setFetchedProducts(props.products);
+    console.log("changing props");
+  }, [props]);
   // const { products, sayHi } = props;
 
   return (
@@ -80,7 +88,12 @@ const HomePage = (props) => {
         <Description />
       </section>
       <section className="">
-        <ProductSection products={props.products} />
+        <ProductSection
+          products={props.products}
+          count={props.count}
+          page={props.page}
+          limit={props.limit}
+        />
       </section>
     </main>
   );

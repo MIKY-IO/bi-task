@@ -3,6 +3,7 @@ import sortIcon from "../public/pictures/sort.png";
 import Products from "./sections/Products.jsx";
 import SideFilter from "./sections/SideFilter";
 import { useEffect, useState } from "react";
+import { Pagination } from "./ui/Pagination";
 
 const ProductSection = (props) => {
   const [products, setProducts] = useState([]);
@@ -44,6 +45,9 @@ const ProductSection = (props) => {
             <Products key={product.name} {...product} />
           ))}
         </div>
+      </div>
+      <div className="w-full flex justify-center items-center">
+        <Pagination count={props.count} limit={props.limit} page={props.page} />
       </div>
     </section>
   );
