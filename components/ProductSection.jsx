@@ -1,10 +1,15 @@
 import Image from "next/image";
 import sortIcon from "../public/pictures/sort.png";
-import { productsData } from "../data";
 import Products from "./sections/Products.jsx";
 import SideFilter from "./sections/SideFilter";
+import { useEffect, useState } from "react";
 
-const ProductSection = () => {
+const ProductSection = (props) => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    setProducts(props.products);
+  }, []);
+
   return (
     <section id="products" className="mt-6  w-full">
       <div className="flex justify-between items-center max-container">
@@ -35,7 +40,7 @@ const ProductSection = () => {
           </div>
         </div>
         <div className="w-3/4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 sm:gap-4 gap-12 ">
-          {productsData.map((product) => (
+          {products?.map((product) => (
             <Products key={product.name} {...product} />
           ))}
         </div>
