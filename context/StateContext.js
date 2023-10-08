@@ -29,7 +29,7 @@ export const CartContextProvider = ({ children }) => {
           };
         }
         return {
-          ...product,
+          ...cartProduct,
           quantity,
         };
       });
@@ -42,23 +42,11 @@ export const CartContextProvider = ({ children }) => {
     }
   };
 
-  const onRemove = (product) => {
-    foundProduct = cartItems.find((item) => item.id === product.id);
-    const newCartItems = cartItems.filter((item) => item.id !== product.id);
-
-    setTotalPrice(
-      (prevTotalPrice) =>
-        prevTotalPrice - foundProduct.price * foundProduct.quantity
-    );
-    setTotalQuantities(
-      (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
-    );
-    setCartItems(newCartItems);
+  const resetCart = () => {
+    setCartItems([]);
+    setTotalQuantities(0);
+    setTotalPrice(0);
   };
-
-  //   const inQty = () => {
-  //     setQty((prevQty) => prevQty + 1);
-  //   };
 
   return (
     <CartContext.Provider
@@ -74,7 +62,7 @@ export const CartContextProvider = ({ children }) => {
         qty,
         setQty,
         addToCart,
-        // incQty,
+        resetCart,
       }}
     >
       {children}
