@@ -2,12 +2,23 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useStateContext } from "../../context/StateContext";
 
-const Product = ({ image, category, name, price, id }) => {
+const Product = ({ image, category, name, price, id, bestseller }) => {
   const { addToCart } = useStateContext();
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full relative">
       <div className="relative w-[238px] group">
-        <Image src={image.src} alt="pictures" className="w-full aspect-[2/3]" />
+        {bestseller && (
+          <div className="absolute text-lg font-semibold top-0 left-0 px-4 h-8 bg-white">
+            Best seller
+          </div>
+        )}
+        <div className="aspect-[2/3]">
+          <Image
+            src={image.src}
+            alt="pictures"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
 
         <div className="hidden absolute bottom-0 left-0 right-0 group-hover:block">
           <button

@@ -82,7 +82,6 @@ const HomePage = (props) => {
     setFetchedProducts(props.products);
     console.log("changing props");
   }, [props]);
-  // const { products, sayHi } = props;
 
   return (
     <main className="mx-auto max-w-screen-xl md:h-full">

@@ -43,7 +43,7 @@ export const productsData = [
       src: people2,
       alt: "",
     },
-    bestseller: false,
+    bestseller: true,
     featured: false,
     details: null,
   },
