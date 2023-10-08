@@ -4,12 +4,13 @@ import Products from "./sections/Products.jsx";
 import SideFilter from "./sections/SideFilter";
 import { useEffect, useState } from "react";
 import { Pagination } from "./ui/Pagination";
+import { BsArrowDownUp } from "react-icons/bs";
 
 const ProductSection = (props) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     setProducts(props.products);
-  }, []);
+  }, [props]);
 
   return (
     <section id="products" className="mt-6  w-full">
@@ -29,6 +30,7 @@ const ProductSection = (props) => {
             />
           </a>
           <ul className="max-lg:hidden flex justify-center items-center gap-2">
+            <BsArrowDownUp />
             <h1 className="text-lg text-[#656565]">Sort by</h1>
             <select className="text-lg font-bold" id="sortby">
               <option value="price">Price</option>
