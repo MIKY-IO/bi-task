@@ -5,6 +5,7 @@ import {
   premium2,
   pets1,
   pets2,
+  dog,
   food1,
   food2,
   food3,
@@ -249,6 +250,20 @@ export const productsData = [
     },
     bestseller: false,
     featured: false,
+    details: null,
+  },
+  {
+    id: "17",
+    name: "About the Samurai King Resting",
+    category: "people",
+    price: 10000,
+    currency: "USD",
+    image: {
+      src: dog,
+      alt: "people foto",
+    },
+    bestseller: true,
+    featured: true,
     details: null,
   },
 ];

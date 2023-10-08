@@ -14,12 +14,14 @@ import cities2 from "./cities2.png";
 import cities3 from "./cities3.png";
 import nature1 from "./nature1.png";
 import nature2 from "./nature2.png";
+import dog from "./dog.png";
 
 export {
   people1,
   people2,
   premium1,
   premium2,
+  dog,
   pets1,
   pets2,
   food1,

@@ -48,7 +48,11 @@ export async function getServerSideProps({ params, query }) {
   }
   const skip = (page - 1) * limit;
   const newProducts = productsData.slice(skip, page * limit);
-  console.log({ newProducts, page, limit, skip, sortKeyString });
+
+  let featured = productsData.find((item) => item?.featured);
+  if (!featured) {
+    featured = productsData[0];
+  }
   return {
     props: {
       count: productsData.length,
@@ -57,12 +61,13 @@ export async function getServerSideProps({ params, query }) {
       skip,
       sortKey: sortKeyString,
       products: newProducts,
+      featured,
     },
   };
 }
 
 const HomePage = (props) => {
-  const { count, page, limit, skip, sortKey, products } = props;
+  const { count, page, limit, skip, sortKey, products, featured } = props;
   console.log({
     count,
     page,
@@ -82,7 +87,7 @@ const HomePage = (props) => {
   return (
     <main className="mx-auto max-w-screen-xl md:h-full">
       <section className="">
-        <Hero />
+        <Hero featured={featured} />
       </section>
       <section className="">
         <Description />
