@@ -1,14 +1,29 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useStateContext } from "../../context/StateContext";
 
-const Products = ({ image, category, name, price }) => {
+const Product = ({ image, category, name, price, id }) => {
+  const { addToCart } = useStateContext();
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full relative">
       <div className="relative w-[238px] group">
         <Image src={image.src} alt="pictures" className="w-full aspect-[2/3]" />
 
         <div className="hidden absolute bottom-0 left-0 right-0 group-hover:block">
-          <button className="flex justify-center items-center h-11 w-full border text-lg bg-black text-white border-black px-2">
+          <button
+            onClick={() =>
+              addToCart(
+                {
+                  id,
+                  name,
+                  image: image.src,
+                  price,
+                },
+                1
+              )
+            }
+            className="flex justify-center items-center h-11 w-full border text-lg bg-black text-white border-black px-2"
+          >
             ADD TO CART
           </button>
         </div>
@@ -21,4 +36,4 @@ const Products = ({ image, category, name, price }) => {
   );
 };
 
-export default Products;
+export default Product;

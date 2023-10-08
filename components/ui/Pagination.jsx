@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 export const Pagination = (props) => {
   const [paginationPage, setPaginationPage] = useState([]);
@@ -43,10 +44,10 @@ export const Pagination = (props) => {
   }, [props]);
 
   return (
-    <div className="flex justify-center items-center gap-2">
+    <div className="flex justify-center items-center gap-2 mt-14">
       <ul className={isFirstPage ? "hidden" : "block"}>
         <Link href={getPageHref(props.page - 1)} replace={true}>
-          prev
+          <AiOutlineLeft />
         </Link>
       </ul>
       <ul className="flex gap-2">
@@ -62,7 +63,7 @@ export const Pagination = (props) => {
       </ul>
       <ul className={isLastPage ? "hidden" : "block"}>
         <Link href={getPageHref(props.page + 1)} replace={true}>
-          next
+          <AiOutlineRight />
         </Link>
       </ul>
     </div>

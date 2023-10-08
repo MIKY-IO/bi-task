@@ -1,6 +1,6 @@
 import Image from "next/image";
 import sortIcon from "../public/pictures/sort.png";
-import Products from "./sections/Products.jsx";
+import Product from "./sections/Product.jsx";
 import SideFilter from "./sections/SideFilter";
 import { useEffect, useState } from "react";
 import { Pagination } from "./ui/Pagination";
@@ -47,7 +47,7 @@ const ProductSection = (props) => {
         </div>
         <div className="w-3/4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 sm:gap-4 gap-12 ">
           {products?.map((product) => (
-            <Products key={product.name} {...product} />
+            <Product key={product.name} {...product} />
           ))}
         </div>
       </div>
