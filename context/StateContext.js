@@ -40,6 +40,7 @@ export const CartContextProvider = ({ children }) => {
 
       setCartItems([...cartItems, product]);
     }
+    setShowCart(true);
   };
 
   const resetCart = () => {
