@@ -30,7 +30,10 @@ const ProductSection = (props) => {
           </a>
           <ul className="max-lg:hidden flex justify-center items-center gap-2">
             <h1 className="text-lg text-[#656565]">Sort by</h1>
-            <h1 className="text-lg font-bold">Price</h1>
+            <select className="text-lg font-bold" id="sortby">
+              <option value="price">Price</option>
+              <option value="name">Name</option>
+            </select>
           </ul>
         </div>
       </div>
