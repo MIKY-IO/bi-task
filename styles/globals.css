@@ -62,14 +62,8 @@ input[type="checkbox"]:checked + .custom-checkbox::before {
   display: block;
 }
 
-.cart-wrapper {
-  @apply fixed z-[100] transition-all duration-[1s] ease-[ease-in-out] right-0 top-0;
-}
-/* .cart-cont {
-  @apply h-screen w-[600px] bg-[white] float-right relative px-2.5 py-10;
-} */
 .cart-container {
-  @apply absolute z-20 w-full max-w-[300px] top-[70px] h-auto min-h-[320px] bg-[white] float-right right-0;
+  @apply absolute z-20 w-full max-w-[300px] top-[64px] h-auto min-h-[320px] bg-[white] float-right right-0 border-4 border-[#E4E4E4];
 }
 
 .cart-item-qty {

@@ -19,6 +19,7 @@ import {
 
 export const productsData = [
   {
+    id: "1",
     name: "Pyro is not CRIME",
     category: "people",
     price: 3.89,
@@ -32,6 +33,7 @@ export const productsData = [
     details: null,
   },
   {
+    id: "2",
     name: "Where am I",
     category: "people",
     price: 100,
@@ -45,6 +47,7 @@ export const productsData = [
     details: null,
   },
   {
+    id: "3",
     name: "Colorful Art",
     category: "premium",
     price: 155,
@@ -58,6 +61,7 @@ export const productsData = [
     details: null,
   },
   {
+    id: "4",
     name: "Colorful Yellow",
     category: "premium",
     price: 189,
@@ -71,6 +75,7 @@ export const productsData = [
     details: null,
   },
   {
+    id: "5",
     name: "Where is Cat?",
     category: "pets",
     price: 55,
@@ -84,6 +89,7 @@ export const productsData = [
     details: null,
   },
   {
+    id: "6",
     name: "Dog Mood",
     category: "pets",
     price: 66,
@@ -98,6 +104,7 @@ export const productsData = [
   },
 
   {
+    id: "7",
     name: "Egg Balloon",
     category: "food",
     price: 93.89,
@@ -111,6 +118,7 @@ export const productsData = [
     details: null,
   },
   {
+    id: "8",
     name: "Egg Tower",
     category: "food",
     price: 91.89,
@@ -125,6 +133,7 @@ export const productsData = [
   },
 
   {
+    id: "9",
     name: "Fruit Idea",
     category: "food",
     price: 89.89,
@@ -139,6 +148,7 @@ export const productsData = [
   },
 
   {
+    id: "10",
     name: "River-land",
     category: "landmarks",
     price: 99.99,
@@ -153,6 +163,7 @@ export const productsData = [
   },
 
   {
+    id: "11",
     name: "Hill Šobes",
     category: "landmarks",
     price: 99.99,
@@ -167,6 +178,7 @@ export const productsData = [
   },
 
   {
+    id: "12",
     name: "Prague City",
     category: "cities",
     price: 69.99,
@@ -181,6 +193,7 @@ export const productsData = [
   },
 
   {
+    id: "13",
     name: "Znojmo town",
     category: "cities",
     price: 39.99,
@@ -195,6 +208,7 @@ export const productsData = [
   },
 
   {
+    id: "14",
     name: "Moravia town",
     category: "cities",
     price: 9.99,
@@ -209,6 +223,7 @@ export const productsData = [
   },
 
   {
+    id: "15",
     name: "Claudy Nature",
     category: "nature",
     price: 19.99,
@@ -223,6 +238,7 @@ export const productsData = [
   },
 
   {
+    id: "16",
     name: "Smoky Mountain",
     category: "nature",
     price: 7.99,
@@ -235,41 +251,4 @@ export const productsData = [
     featured: false,
     details: null,
   },
-
-  // {
-  //   name: "Samurai King Restling",
-  //   category: "landmarks",
-  //   price: 101,
-  //   currency: "USD",
-  //   image: {
-  //     src: "",
-  //     alt: "",
-  //   },
-
-  //   bestseller: false,
-  //   featured: true,
-  //   details: {
-  //     dimmentions: {
-  //       width: 1020,
-  //       height: 1020,
-  //     },
-  //     size: 15000,
-  //     description:
-  //       "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely",
-  //     recommendations: [
-  //       {
-  //         src: "",
-  //         alt: "",
-  //       },
-  //       {
-  //         src: "",
-  //         alt: "",
-  //       },
-  //       {
-  //         src: "",
-  //         alt: "",
-  //       },
-  //     ],
-  //   },
-  // },
 ];
