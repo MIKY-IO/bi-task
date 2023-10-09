@@ -1,41 +1,8 @@
-// import {
-//   Description,
-//   Hero,
-//   Layout,
-//   PageNavigation,
-//   Products,
-// } from "../components";
-
-// const HomePage = () => {
-//   return (
-//     <main>
-//       <Layout />
-//       <section className="">
-//         <Hero />
-//       </section>
-//       <section className="">
-//         <Description />
-//       </section>
-//       <section className="">
-//         <Products />
-//       </section>
-//       <section className="">
-//         <PageNavigation />
-//       </section>
-//     </main>
-//   );
-// };
-
-// export default HomePage;
-
 import React, { useEffect, useState } from "react";
 import { Hero, ProductSection, Description, Layout } from "../components";
-import { productsData } from "../data";
+import { productsData, categories } from "../data";
 
 export async function getServerSideProps({ params, query }) {
-  console.log({ params, query });
-  console.log("i am in server");
-  // page i get from query
   const page = Number(query.page) ?? 1;
   let limit = 6;
   if (query.limit && query.limit >= 6 && query.limit <= 12) {
@@ -68,13 +35,6 @@ export async function getServerSideProps({ params, query }) {
 
 const HomePage = (props) => {
   const { count, page, limit, skip, sortKey, products, featured } = props;
-  console.log({
-    count,
-    page,
-    limit,
-    skip,
-    sortKey,
-  });
 
   const [fetchedProducts, setFetchedProducts] = useState([]);
 

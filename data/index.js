@@ -17,7 +17,15 @@ import {
   nature1,
   nature2,
 } from "../public/pictures/products/index.js";
-
+export const categories = [
+  "people",
+  "premium",
+  "pets",
+  "food",
+  "landmarks",
+  "cities",
+  "nature",
+];
 export const productsData = [
   {
     id: "1",

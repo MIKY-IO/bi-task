@@ -16,7 +16,7 @@ const Cart = () => {
     <div className="cart-container ">
       <div className="text-right flex justify-end items-end mt-5 mr-5">
         <RxCross2
-          className="close-cart w-7 h-7"
+          className="close-cart w-7 h-7 cursor-pointer"
           onClick={() => setShowCart(false)}
         />
       </div>
