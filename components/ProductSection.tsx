@@ -5,9 +5,17 @@ import SideFilter from "./sections/SideFilter";
 import { useEffect, useState } from "react";
 import { Pagination } from "./ui/Pagination";
 import { BsArrowDownUp } from "react-icons/bs";
+import { TProduct } from "@/data";
 
-const ProductSection = (props) => {
-  const [products, setProducts] = useState([]);
+type TProductSectionProps = {
+  products: TProduct[];
+  count: number;
+  page: number;
+  limit: number;
+};
+
+const ProductSection: React.FC<TProductSectionProps> = (props) => {
+  const [products, setProducts] = useState<TProduct[]>([]);
   useEffect(() => {
     setProducts(props.products);
   }, [props]);
@@ -21,13 +29,7 @@ const ProductSection = (props) => {
         </div>
         <div className="gap-2 flex justify-center items-center">
           <a href="" className="lg:hidden ">
-            <Image
-              src={sortIcon}
-              alt="sort icon"
-              icons
-              width={20}
-              height={20}
-            />
+            <Image src={sortIcon} alt="sort icon" width={20} height={20} />
           </a>
           <ul className="max-lg:hidden flex justify-center items-center gap-2">
             <BsArrowDownUp />

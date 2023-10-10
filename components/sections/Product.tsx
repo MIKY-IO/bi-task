@@ -1,8 +1,18 @@
 import React, { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useStateContext } from "../../context/StateContext";
+import { TProduct } from "@/data";
 
-const Product = ({ image, category, name, price, id, bestseller }) => {
+type TProductProps = TProduct;
+
+const Product: React.FC<TProductProps> = ({
+  image,
+  category,
+  name,
+  price,
+  id,
+  bestseller,
+}) => {
   const { addToCart } = useStateContext();
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full relative">

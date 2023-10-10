@@ -8,7 +8,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import Cart from "../sections/Cart";
 import { useStateContext } from "../../context/StateContext";
 
-const Nav = () => {
+const Nav: React.FC<{}> = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
 
   return (

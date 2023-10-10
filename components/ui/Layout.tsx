@@ -1,7 +1,15 @@
 import Head from "next/head";
-import Nav from "/components/sections/Nav";
+import Nav from "@/components/sections/Nav";
 
-const Layout = ({ children }) => {
+interface ILayoutProps {
+  children: React.ReactNode;
+}
+type TLayoutProps = {
+  children: React.ReactNode;
+};
+
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  // const Layout: React.FC<ILayoutProps> = ({ children }) => {
   return (
     <div className="">
       <Head>
