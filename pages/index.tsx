@@ -1,17 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { Hero, ProductSection, Description, Layout } from "../components";
-import { productsData, categories } from "../data";
+import { useEffect, useState } from "react";
+import { Description, Hero, ProductSection } from "../components";
+import { productsData } from "../data";
+import type { TProduct } from "../data";
+import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 
-export async function getServerSideProps({ params, query }) {
-  const page = Number(query.page) ?? 1;
+interface IProductProps {
+  count: number;
+  page: number;
+  limit: number;
+  skip: number;
+  sortKey: string;
+  products: Array<TProduct>;
+  featured: TProduct;
+}
+
+export const getServerSideProps = (async ({ params, query }) => {
+  let page = 1;
+  if (params?.page) {
+    page = Number(params.page);
+  }
   let limit = 6;
-  if (query.limit && query.limit >= 6 && query.limit <= 12) {
-    limit = query.limit;
+  const queryLimit = Number(query.limit);
+  const sortKey = String(query.sortKey);
+  if (queryLimit && queryLimit >= 6 && queryLimit <= 12) {
+    limit = queryLimit;
   }
   const sortKeys = ["price", "title", "createdAt"];
   let sortKeyString = "createdAt";
-  if (query.sortKey && sortKeys.includes(query.sortKey)) {
-    sortKeyString = query.sortKey;
+  if (query.sortKey && sortKeys.includes(sortKey)) {
+    sortKeyString = sortKey;
   }
   const skip = (page - 1) * limit;
   const newProducts = productsData.slice(skip, page * limit);
@@ -31,16 +48,15 @@ export async function getServerSideProps({ params, query }) {
       featured,
     },
   };
-}
+}) satisfies GetServerSideProps;
 
-const HomePage = (props) => {
+const HomePage = (props: IProductProps) => {
   const { count, page, limit, skip, sortKey, products, featured } = props;
 
-  const [fetchedProducts, setFetchedProducts] = useState([]);
+  const [fetchedProducts, setFetchedProducts] = useState<TProduct[]>([]);
 
   useEffect(() => {
     setFetchedProducts(props.products);
-    console.log("changing props");
   }, [props]);
 
   return (
@@ -53,7 +69,7 @@ const HomePage = (props) => {
       </section>
       <section className="">
         <ProductSection
-          products={props.products}
+          products={fetchedProducts}
           count={props.count}
           page={props.page}
           limit={props.limit}

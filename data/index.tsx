@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image.js";
 import {
   people1,
   people2,
@@ -26,7 +27,23 @@ export const categories = [
   "cities",
   "nature",
 ];
-export const productsData = [
+
+export type TProduct = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  currency: string;
+  image: {
+    src: StaticImageData;
+    alt: string;
+  };
+  bestseller?: boolean;
+  featured?: boolean;
+  details: string | null;
+};
+
+export const productsData: TProduct[] = [
   {
     id: "1",
     name: "Pyro is not CRIME",

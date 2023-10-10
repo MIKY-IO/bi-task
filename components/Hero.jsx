@@ -37,7 +37,7 @@ const Hero = (props) => {
           alt="dog"
           className="w-full object-cover overflow-hidden h-120"
         />
-        <div class="absolute w-44 h-18 bottom-0 left-0 bg-white p-4">
+        <div className="absolute w-44 h-18 bottom-0 left-0 bg-white p-4">
           <p className="justify-center items-center text-center font-bold text-sm">
             Photo of the day
           </p>

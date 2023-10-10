@@ -1,18 +1,33 @@
+import { TProduct } from "@/data";
+import { StaticImageData } from "next/image";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-const CartContext = createContext();
+const CartContext = createContext<any>(null);
 
-export const CartContextProvider = ({ children }) => {
+type TProductContextProps = {
+  children: React.ReactNode;
+};
+
+export type TCartItem = {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: StaticImageData;
+};
+
+type TCartItems = Array<TCartItem>;
+
+export const CartContextProvider: React.FC<TProductContextProps> = ({
+  children,
+}) => {
   const [showCart, setShowCart] = useState(false);
-  /**
-   * state for cartItems - price, image, name
-   */
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<TCartItems>([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
 
-  const addToCart = (product, quantity) => {
+  const addToCart = (product: TProduct, quantity: number) => {
     const isItemInCart = cartItems.some((item) => item.id === product.id);
     console.log(isItemInCart);
     setTotalPrice(
@@ -36,9 +51,15 @@ export const CartContextProvider = ({ children }) => {
 
       setCartItems(updatedCartItems);
     } else {
-      product.quantity = quantity;
+      const newProduct: TCartItem = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image.src,
+        quantity: quantity,
+      };
 
-      setCartItems([...cartItems, product]);
+      setCartItems([...cartItems, newProduct]);
     }
     setShowCart(true);
   };
