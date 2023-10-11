@@ -14,6 +14,7 @@ type TProductSectionProps = {
   count: number;
   page: number;
   limit: number;
+  sortKey?: string;
 };
 
 const ProductSection: React.FC<TProductSectionProps> = (props) => {
@@ -22,6 +23,18 @@ const ProductSection: React.FC<TProductSectionProps> = (props) => {
   useEffect(() => {
     setProducts(props.products);
   }, [props]);
+
+  const onArrowClick = () => {
+    let url;
+    const isNameSort = props.sortKey === "name";
+    if (isNameSort) {
+      url = addKey(router.query, "sortKey", "price");
+    } else {
+      url = addKey(router.query, "sortKey", "name");
+    }
+    console.log(isNameSort);
+    router.push(url);
+  };
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const url = addKey(router.query, "sortKey", e.target.value);
@@ -39,7 +52,9 @@ const ProductSection: React.FC<TProductSectionProps> = (props) => {
             <Image src={sortIcon} alt="sort icon" width={20} height={20} />
           </a>
           <ul className="max-lg:hidden flex justify-center items-center gap-2">
-            <BsArrowDownUp />
+            <div onClick={onArrowClick} className="cursor-pointer">
+              <BsArrowDownUp />
+            </div>
             <h1 className="text-lg text-[#656565]">Sort by</h1>
             <select
               className="text-lg font-bold"

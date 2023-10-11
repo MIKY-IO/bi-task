@@ -44,12 +44,13 @@ const Cart: React.FC<{}> = () => {
                 </div>
               </p>
             </div>
-            <div className="w-1/2 h-16 overflow-hidden border-2">
+            <div className="w-1/2 aspect-[3/2] overflow-hidden border-2 relative">
               <Image
                 src={item.image}
                 alt="cart"
                 objectFit="none"
-                className="aspect-[2/3] object-center object-none"
+                fill={true}
+                className="aspect-[2/3] object-center object-none "
               />
             </div>
           </div>

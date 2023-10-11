@@ -63,7 +63,7 @@ input[type="checkbox"]:checked + .custom-checkbox::before {
 }
 
 .cart-container {
-  @apply absolute z-20 w-full max-w-[300px] top-[64px] h-auto  bg-[white] float-right right-0 border-4 border-[#E4E4E4];
+  @apply absolute z-20 w-full max-w-[340px] top-[64px] h-auto  bg-[white] float-right right-0 border-4 border-[#E4E4E4];
 }
 
 .cart-item-qty {

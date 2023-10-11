@@ -88,6 +88,7 @@ const HomePage = (props: IProductProps) => {
           count={props.count}
           page={props.page}
           limit={props.limit}
+          sortKey={props.sortKey}
         />
       </section>
     </main>
