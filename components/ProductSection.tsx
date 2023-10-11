@@ -1,7 +1,7 @@
 import Image from "next/image";
-import sortIcon from "../public/pictures/sort.png";
-import Product from "./sections/Product";
-import SideFilter from "./sections/SideFilter";
+import sortIcon from "@/public/pictures/sort.png";
+import Product from "@/components/sections/Product";
+import SideFilter from "@/components/sections/SideFilter";
 import { useEffect, useState } from "react";
 import { Pagination } from "./ui/Pagination";
 import { BsArrowDownUp } from "react-icons/bs";

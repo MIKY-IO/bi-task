@@ -7,6 +7,7 @@ import {
   GetStaticPaths,
   GetServerSidePropsContext,
 } from "next";
+import { select } from "@nextui-org/react";
 
 interface IProductProps {
   count: number;
@@ -35,16 +36,23 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
     sortKeyString = sortKey;
   }
   const skip = (page - 1) * limit;
-  const newProducts = productsData.slice(skip, page * limit);
+  console.log(query.category);
+  const selectedCategoris = (query.category as string)?.split(",") ?? [];
+
+  const filteredProducts = productsData.filter((p) =>
+    selectedCategoris.includes(p.category)
+  );
+
+  const newProducts = filteredProducts.slice(skip, page * limit);
 
   let featured = productsData.find((item) => item?.featured);
   if (!featured) {
     featured = productsData[0];
   }
-  console.log(page, limit, skip, sortKeyString);
+  console.log(page, limit, skip, sortKeyString, newProducts.length);
   return {
     props: {
-      count: productsData.length,
+      count: filteredProducts.length,
       page: Number(page),
       limit,
       skip,
