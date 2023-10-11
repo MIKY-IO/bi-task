@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState, useEffect } from "react";
 import { Checkbox } from "../ui/Checkbox";
-import { addKey, getHref, removeKey } from "@/utils/url";
+import { addKeyToGroup, removeKeyFromGroup } from "@/utils/url";
 import { useRouter } from "next/router";
 
 const SideFilter = () => {
@@ -10,9 +10,9 @@ const SideFilter = () => {
     const { id, value, checked } = e.target;
     let href;
     if (checked) {
-      href = addKey(router.query, "category", id);
+      href = addKeyToGroup(router.query, "category", id);
     } else {
-      href = removeKey(router.query, "category", id);
+      href = removeKeyFromGroup(router.query, "category", id);
     }
     router.push(href);
   };

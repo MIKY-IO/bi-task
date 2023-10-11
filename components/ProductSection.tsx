@@ -2,10 +2,12 @@ import Image from "next/image";
 import sortIcon from "@/public/pictures/sort.png";
 import Product from "@/components/sections/Product";
 import SideFilter from "@/components/sections/SideFilter";
-import { useEffect, useState } from "react";
+import { ChangeEvent, ChangeEventHandler, useEffect, useState } from "react";
 import { Pagination } from "./ui/Pagination";
 import { BsArrowDownUp } from "react-icons/bs";
 import { TProduct } from "@/data";
+import { useRouter } from "next/router";
+import { addKey } from "@/utils/url";
 
 type TProductSectionProps = {
   products: TProduct[];
@@ -16,10 +18,15 @@ type TProductSectionProps = {
 
 const ProductSection: React.FC<TProductSectionProps> = (props) => {
   const [products, setProducts] = useState<TProduct[]>([]);
+  const router = useRouter();
   useEffect(() => {
     setProducts(props.products);
   }, [props]);
 
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const url = addKey(router.query, "sortKey", e.target.value);
+    router.push(url);
+  };
   return (
     <section id="products" className="mt-6  w-full">
       <div className="flex justify-between items-center max-container">
@@ -34,7 +41,11 @@ const ProductSection: React.FC<TProductSectionProps> = (props) => {
           <ul className="max-lg:hidden flex justify-center items-center gap-2">
             <BsArrowDownUp />
             <h1 className="text-lg text-[#656565]">Sort by</h1>
-            <select className="text-lg font-bold" id="sortby">
+            <select
+              className="text-lg font-bold"
+              id="sortKey"
+              onChange={handleChange}
+            >
               <option value="price">Price</option>
               <option value="name">Name</option>
             </select>

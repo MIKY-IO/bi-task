@@ -1,5 +1,11 @@
 const addKey = (query: any, queryKey: string, queryValue: string) => {
   const searchParams = new URLSearchParams(query);
+  searchParams.set(queryKey, queryValue);
+  return `/?${searchParams.toString()}`;
+};
+
+const addKeyToGroup = (query: any, queryKey: string, queryValue: string) => {
+  const searchParams = new URLSearchParams(query);
   let values = query[queryKey]?.split(",") ?? [];
 
   values.push(queryValue);
@@ -9,7 +15,11 @@ const addKey = (query: any, queryKey: string, queryValue: string) => {
   return `/?${searchParams.toString()}`;
 };
 
-const removeKey = (query: any, queryKey: string, queryValue: string) => {
+const removeKeyFromGroup = (
+  query: any,
+  queryKey: string,
+  queryValue: string
+) => {
   const searchParams = new URLSearchParams(query);
   let values = searchParams.getAll(queryKey)[0]?.split(",");
   values = values.filter((v) => v != queryValue);
@@ -17,4 +27,4 @@ const removeKey = (query: any, queryKey: string, queryValue: string) => {
   return `/?${searchParams.toString()}`;
 };
 
-export { addKey, removeKey };
+export { addKeyToGroup, removeKeyFromGroup, addKey };

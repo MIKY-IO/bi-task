@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Description, Hero, ProductSection } from "../components";
-import { productsData } from "../data";
+import { nameSorter, priceSorter, productsData } from "../data";
 import type { TProduct } from "../data";
 import {
   GetStaticProps,
@@ -26,22 +26,25 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   }
   let limit = 6;
   const queryLimit = Number(query.limit);
-  const sortKey = String(query.sortKey);
   if (queryLimit && queryLimit >= 6 && queryLimit <= 12) {
     limit = queryLimit;
   }
-  const sortKeys = ["price", "title", "createdAt"];
-  let sortKeyString = "createdAt";
-  if (query.sortKey && sortKeys.includes(sortKey)) {
-    sortKeyString = sortKey;
-  }
   const skip = (page - 1) * limit;
-  console.log(query.category);
-  const selectedCategoris = (query.category as string)?.split(",") ?? [];
 
-  const filteredProducts = productsData.filter((p) =>
-    selectedCategoris.includes(p.category)
-  );
+  const categoryString =
+    (query.category as string).length > 0 ? (query.category as string) : null;
+  const selectedCategoris = categoryString?.split(",") ?? [];
+
+  const hasCategories = selectedCategoris?.length > 0 ? true : false;
+
+  const sortKey = String(query.sortKey);
+
+  const sorter = sortKey === "price" ? priceSorter : nameSorter;
+  const filteredProducts = hasCategories
+    ? productsData
+        .filter((p) => selectedCategoris.includes(p.category))
+        .sort(sorter)
+    : productsData.sort(sorter);
 
   const newProducts = filteredProducts.slice(skip, page * limit);
 
@@ -49,14 +52,13 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   if (!featured) {
     featured = productsData[0];
   }
-  console.log(page, limit, skip, sortKeyString, newProducts.length);
   return {
     props: {
       count: filteredProducts.length,
       page: Number(page),
       limit,
       skip,
-      sortKey: sortKeyString,
+      sortKey,
       products: newProducts,
       featured,
     },
