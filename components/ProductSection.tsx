@@ -15,6 +15,7 @@ type TProductSectionProps = {
   page: number;
   limit: number;
   sortKey?: string;
+  showMobileFilterCallback: () => void;
 };
 
 const ProductSection: React.FC<TProductSectionProps> = (props) => {
@@ -45,12 +46,17 @@ const ProductSection: React.FC<TProductSectionProps> = (props) => {
       <div className="flex justify-between items-center max-container">
         <div className="flex justify-between gap-2">
           <h1 className="text-2xl font-bold">Photography /</h1>
-          <h1 className="text-2xl text-[#656565] ">Premium Photos</h1>
+          <h1 className="hidden md:block text-2xl text-[#656565] ">
+            Premium Photos
+          </h1>
         </div>
         <div className="gap-2 flex justify-center items-center">
-          <a href="" className="lg:hidden ">
+          <button
+            className="md:hidden"
+            onClick={props.showMobileFilterCallback}
+          >
             <Image src={sortIcon} alt="sort icon" width={20} height={20} />
-          </a>
+          </button>
           <ul className="max-lg:hidden flex justify-center items-center gap-2">
             <div onClick={onArrowClick} className="cursor-pointer">
               <BsArrowDownUp />
@@ -68,12 +74,12 @@ const ProductSection: React.FC<TProductSectionProps> = (props) => {
         </div>
       </div>
       <div className="flex mt-10">
-        <div className="w-1/4 ">
+        <div className="hidden md:w-1/4 md:block">
           <div className="">
             <SideFilter />
           </div>
         </div>
-        <div className="w-3/4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 sm:gap-4 gap-12 ">
+        <div className="w-full md:w-3/4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 sm:gap-4 gap-12 ">
           {products?.map((product) => (
             <Product key={product.name} {...product} />
           ))}

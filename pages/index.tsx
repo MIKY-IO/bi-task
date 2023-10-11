@@ -8,6 +8,8 @@ import {
   GetServerSidePropsContext,
 } from "next";
 import { select } from "@nextui-org/react";
+import SideFilter from "@/components/sections/SideFilter";
+import { RxCross2 } from "react-icons/rx";
 
 interface IProductProps {
   count: number;
@@ -69,13 +71,31 @@ const HomePage = (props: IProductProps) => {
   const { featured } = props;
 
   const [fetchedProducts, setFetchedProducts] = useState<TProduct[]>([]);
+  const [showSideFilter, setShowSideFilter] = useState(false);
 
   useEffect(() => {
     setFetchedProducts(props.products);
   }, [props]);
 
   return (
-    <main className="mx-auto max-w-screen-xl md:h-full">
+    <main className="mx-auto max-w-screen-xl  h-full">
+      {showSideFilter && (
+        <div className="block md:hidden">
+          <div className="fixed inset-0 z-10 bg-black/40"></div>
+          <div className="px-20 block md:hidden top-0 fixed inset-0 bg-white z-50 mt-80 pt-20">
+            <div
+              className="text-right flex justify-end items-end mt-5 mr-5"
+              onClick={() => {
+                setShowSideFilter(false);
+              }}
+            >
+              <RxCross2 className="close-cart w-7 h-7 cursor-pointer" />
+            </div>
+            <SideFilter />
+          </div>
+        </div>
+      )}
+
       <section className="">
         <Hero featured={featured} />
       </section>
@@ -89,6 +109,7 @@ const HomePage = (props: IProductProps) => {
           page={props.page}
           limit={props.limit}
           sortKey={props.sortKey}
+          showMobileFilterCallback={setShowSideFilter}
         />
       </section>
     </main>

@@ -6,6 +6,7 @@ body {
   padding: 4rem;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  /* @apply overflow-y-hidden md:overflow-y-auto; */
 }
 
 @layer components {

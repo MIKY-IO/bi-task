@@ -16,7 +16,7 @@ const Product: React.FC<TProductProps> = ({
   const { addToCart } = useStateContext();
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full relative">
-      <div className="relative w-[238px] group">
+      <div className="relative md:max-w-[300px] group w-full">
         {bestseller && (
           <div className="absolute text-lg font-semibold top-0 left-0 px-4 h-8 bg-white">
             Best seller
