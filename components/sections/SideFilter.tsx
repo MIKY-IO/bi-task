@@ -77,7 +77,7 @@ const SideFilter = () => {
         <div className="w-1/4"></div>
       </div>
 
-      <div className="flex-col text-left space-y-5 pt-6 ">
+      {/* <div className="flex-col text-left space-y-5 pt-6 ">
         <h2 className="text-xl font-bold">Price range</h2>
 
         <div className="group flex items-center pt-4">
@@ -123,7 +123,7 @@ const SideFilter = () => {
             More than $200
           </span>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
