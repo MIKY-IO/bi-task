@@ -109,7 +109,7 @@ const HomePage = (props: IProductProps) => {
           page={props.page}
           limit={props.limit}
           sortKey={props.sortKey}
-          showMobileFilterCallback={setShowSideFilter}
+          showMobileFilterCallback={() => setShowSideFilter}
         />
       </section>
     </main>
