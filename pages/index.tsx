@@ -61,7 +61,6 @@ const HomePage = (props: IProductProps) => {
   const [fetchedProducts, setFetchedProducts] = useState<TProduct[]>([]);
 
   useEffect(() => {
-    console.log("props", props);
     setFetchedProducts(props.products);
   }, [props]);
 
