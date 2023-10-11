@@ -3,35 +3,48 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
-export const Pagination = (props) => {
-  const [paginationPage, setPaginationPage] = useState([]);
+interface IPaginationProps {
+  count: number;
+  limit: number;
+  page: number;
+}
+
+type TPaginationItem = {
+  value: number;
+  isCurrent: boolean;
+  href: string;
+};
+type TPaginationItems = TPaginationItem[];
+
+export const Pagination: React.FC<IPaginationProps> = (props) => {
+  const [paginationPage, setPaginationPage] = useState<TPaginationItems>([]);
   const [isFirstPage, setIsFirstPage] = useState(false);
   const [isLastPage, setIsLastPage] = useState(false);
 
   const router = useRouter();
 
-  const getPageHref = (page) => {
-    const searchParams = new URLSearchParams(router.query);
-    searchParams.set("page", page);
+  const getPageHref = (page: number) => {
+    const { query }: { query: any } = router;
+    const searchParams = new URLSearchParams(query);
+    searchParams.set("page", String(page));
     return `/?${searchParams.toString()}`;
   };
 
   useEffect(() => {
     const { count, limit, page } = props;
     const totalPages = Math.ceil(count / limit);
-    const query = router.query;
-    if (query.page === "1") {
+    if (page == 1) {
       setIsFirstPage(true);
     } else {
       setIsFirstPage(false);
     }
-    if (query.page >= totalPages) {
+    if (page >= totalPages) {
       setIsLastPage(true);
     } else {
       setIsLastPage(false);
     }
 
-    const pagination = [];
+    const pagination: TPaginationItems = [];
     for (let i = 1; i <= totalPages; i++) {
       const isCurrent = i === page;
       pagination.push({
