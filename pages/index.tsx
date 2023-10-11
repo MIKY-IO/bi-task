@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import { Description, Hero, ProductSection } from "../components";
 import { productsData } from "../data";
 import type { TProduct } from "../data";
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
+import {
+  GetStaticProps,
+  GetStaticPaths,
+  GetServerSidePropsContext,
+} from "next";
 
 interface IProductProps {
   count: number;
@@ -14,10 +18,10 @@ interface IProductProps {
   featured: TProduct;
 }
 
-export const getServerSideProps = (async ({ params, query }) => {
+export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   let page = 1;
-  if (params?.page) {
-    page = Number(params.page);
+  if (query?.page) {
+    page = Number(query.page);
   }
   let limit = 6;
   const queryLimit = Number(query.limit);
@@ -37,6 +41,7 @@ export const getServerSideProps = (async ({ params, query }) => {
   if (!featured) {
     featured = productsData[0];
   }
+  console.log(page, limit, skip, sortKeyString);
   return {
     props: {
       count: productsData.length,
@@ -48,14 +53,15 @@ export const getServerSideProps = (async ({ params, query }) => {
       featured,
     },
   };
-}) satisfies GetServerSideProps;
+}
 
 const HomePage = (props: IProductProps) => {
-  const { count, page, limit, skip, sortKey, products, featured } = props;
+  const { featured } = props;
 
   const [fetchedProducts, setFetchedProducts] = useState<TProduct[]>([]);
 
   useEffect(() => {
+    console.log("props", props);
     setFetchedProducts(props.products);
   }, [props]);
 

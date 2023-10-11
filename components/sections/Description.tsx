@@ -1,8 +1,8 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import {
   smallOne,
-  smallTwo,
   smallThree,
+  smallTwo,
 } from "../../public/pictures/small/index";
 
 const Description: React.FC = () => {

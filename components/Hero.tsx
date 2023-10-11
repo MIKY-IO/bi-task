@@ -1,9 +1,12 @@
-import Button from "./ui/Button";
 import Image from "next/image";
-
 import { useStateContext } from "../context/StateContext";
+import { TProduct } from "@/data";
 
-const Hero = (props) => {
+interface IHeroProps {
+  featured: TProduct;
+}
+
+const Hero: React.FC<IHeroProps> = (props) => {
   const { addToCart } = useStateContext();
   const { featured } = props;
 
