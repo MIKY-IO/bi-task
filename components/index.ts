@@ -1,4 +1,4 @@
-import Description from "./Description";
+import Description from "../components/sections/Description";
 import Hero from "./Hero";
 import Layout from "./ui/Layout";
 // import PageNavigation from "./PageNavigation";
