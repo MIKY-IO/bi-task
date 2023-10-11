@@ -2,9 +2,17 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
 import { useStateContext } from "../../context/StateContext";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const Cart = () => {
+export type TCart = {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: StaticImageData;
+};
+
+const Cart: React.FC<TCart> = () => {
   const { totalPrice, totalQuantities, cartItems, setShowCart, resetCart } =
     useStateContext();
 
@@ -21,7 +29,7 @@ const Cart = () => {
         />
       </div>
       {cartItems?.length > 0 &&
-        cartItems.map((item) => (
+        cartItems.map((item: TCart) => (
           <div
             key={item.id}
             className="flex justify-between items-center mx-4 mt-4"
