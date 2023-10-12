@@ -1,9 +1,5 @@
 import Image from "next/image";
-import {
-  smallOne,
-  smallThree,
-  smallTwo,
-} from "../../public/pictures/small/index.js";
+import { smallOne, smallThree, smallTwo } from "@/public/pictures/small/";
 
 const Description: React.FC = () => {
   return (

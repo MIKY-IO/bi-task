@@ -17,7 +17,7 @@ import {
   cities3,
   nature1,
   nature2,
-} from "../public/pictures/products/index.js";
+} from "@/public/pictures/products";
 export const categories = [
   "people",
   "premium",

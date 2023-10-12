@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "../../public/pictures/logo.png";
+import Logo from "@/public/pictures/logo.png";
 
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
