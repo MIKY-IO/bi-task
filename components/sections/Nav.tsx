@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import Logo from "../../public/pictures/logo.png";
 import Image from "next/image";
+import React from "react";
+import Logo from "../../public/pictures/logo.png";
 
-// import { AiOutlineShopping } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-import Cart from "../sections/Cart";
 import { useStateContext } from "../../context/StateContext";
+import Cart from "../sections/Cart";
 
 const Nav: React.FC<{}> = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();

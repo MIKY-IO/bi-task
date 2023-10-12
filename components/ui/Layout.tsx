@@ -4,22 +4,22 @@ import Nav from "@/components/sections/Nav";
 interface ILayoutProps {
   children: React.ReactNode;
 }
-type TLayoutProps = {
-  children: React.ReactNode;
-};
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  // const Layout: React.FC<ILayoutProps> = ({ children }) => {
+const Layout: React.FC<ILayoutProps> = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>MikyIO-BI-task</title>
         <link rel="shortcut icon" href="/favicon/favicon.ico" sizes="any" />
       </Head>
-      <header className="">
+      <header>
         <Nav />
       </header>
-      <main className="">{children}</main>
+      <main>{children}</main>
     </div>
   );
 };

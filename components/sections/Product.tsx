@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import Image, { StaticImageData } from "next/image";
-import { useStateContext } from "../../context/StateContext";
 import { TProduct } from "@/data";
+import Image from "next/image";
+import React from "react";
+import { useStateContext } from "../../context/StateContext";
 
 type TProductProps = TProduct;
 
