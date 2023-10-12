@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image.js";
+import { StaticImageData } from "next/image";
 import {
   people1,
   people2,
@@ -10,13 +10,13 @@ import {
   food1,
   food2,
   food3,
-  landmarks1,
-  landmarks2,
   cities1,
   cities2,
   cities3,
   nature1,
   nature2,
+  landmOne,
+  landmTwo,
 } from "@/public/pictures/products/index";
 export const categories = [
   "people",
@@ -219,7 +219,7 @@ export const productsData: TProduct[] = [
     price: 99.99,
     currency: "USD",
     image: {
-      src: landmarks1,
+      src: landmOne,
       alt: "",
     },
     bestseller: false,
@@ -234,7 +234,7 @@ export const productsData: TProduct[] = [
     price: 99.99,
     currency: "USD",
     image: {
-      src: landmarks2,
+      src: landmTwo,
       alt: "",
     },
     bestseller: false,

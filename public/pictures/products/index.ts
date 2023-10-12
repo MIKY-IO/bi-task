@@ -7,14 +7,14 @@ import pets2 from "./pets2.png";
 import food1 from "./food1.png";
 import food2 from "./food2.png";
 import food3 from "./food3.png";
-import landmarks1 from "./landmarks1.png";
-import landmarks2 from "./landmarks2.png";
 import cities1 from "./cities1.png";
 import cities2 from "./cities2.png";
 import cities3 from "./cities3.png";
 import nature1 from "./nature1.png";
 import nature2 from "./nature2.png";
 import dog from "./dog.png";
+import landmOne from "./landmOne.png";
+import landmTwo from "./landmTwo.png";
 
 export {
   people1,
@@ -27,8 +27,8 @@ export {
   food1,
   food2,
   food3,
-  landmarks1,
-  landmarks2,
+  landmOne,
+  landmTwo,
   cities1,
   cities2,
   cities3,
