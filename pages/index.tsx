@@ -99,7 +99,7 @@ const HomePage = (props: IProductProps) => {
       {showSideFilter && (
         <div className="block md:hidden">
           <div className="fixed inset-0 z-10 bg-black/40"></div>
-          <div className="px-20 block md:hidden top-0 fixed inset-0 bg-white z-50 mt-80 pt-20">
+          <div className="block md:hidden top-0 fixed inset-0 bg-white z-50 mt-32 pt-10">
             <div
               className="text-right flex justify-end items-end mt-5 mr-5"
               onClick={() => {
