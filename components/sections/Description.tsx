@@ -3,7 +3,7 @@ import {
   smallOne,
   smallThree,
   smallTwo,
-} from "../../public/pictures/small/index";
+} from "../../public/pictures/small/index.js";
 
 const Description: React.FC = () => {
   return (
