@@ -6,7 +6,6 @@ body {
   padding: 4rem;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  /* @apply overflow-y-hidden md:overflow-y-auto; */
 }
 
 @layer components {
@@ -35,9 +34,7 @@ input[type="checkbox"] {
   display: none;
 }
 
-/* Style the custom checkbox */
 .custom-checkbox {
-  /* Adjusted height */
   background-color: #fff;
   border: 0.15em solid #000;
   border-radius: 0.15em;
@@ -45,9 +42,9 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* Style the checkmark icon (initially hidden) */
+/* checkmark icon (hidden) */
 .custom-checkbox::before {
-  content: "\2713"; /* Unicode checkmark character */
+  content: "\2713";
   display: none;
   position: absolute;
   top: 50%;
@@ -58,49 +55,15 @@ input[type="checkbox"] {
   color: #000;
 }
 
-/* Style the custom checkbox when checked */
+/* heckbox when checked */
 input[type="checkbox"]:checked + .custom-checkbox::before {
   display: block;
 }
 
 .cart-container {
-  @apply absolute z-20 w-full max-w-[340px] top-[64px] h-auto  bg-[white] float-right right-0 border-4 border-[#E4E4E4];
+  @apply absolute z-20 w-full max-w-[380px] top-[64px] h-auto  bg-[white] float-right right-0 border-4 border-[#E4E4E4];
 }
 
 .cart-item-qty {
-  @apply absolute text-[#eee] bg-[#000000] w-[20px] h-[20Px] text-sm text-center font-semibold  -right-2;
-}
-
-@layer utilities {
-  .padding {
-    @apply sm:px-16 px-8 sm:py-24 py-12;
-  }
-
-  .padding-x {
-    @apply sm:px-16 px-8;
-  }
-
-  .padding-y {
-    @apply sm:py-24 py-12;
-  }
-
-  .padding-l {
-    @apply sm:pl-16 pl-8;
-  }
-
-  .padding-r {
-    @apply sm:pr-16 pr-8;
-  }
-
-  .padding-t {
-    @apply sm:pt-24 pt-12;
-  }
-
-  .padding-b {
-    @apply sm:pb-24 pb-12;
-  }
-
-  .info-text {
-    @apply font-montserrat text-slate-gray text-lg leading-7;
-  }
+  @apply absolute text-[#eee] bg-[#000000] w-[20px] h-[20px] text-sm text-center font-semibold  -right-2;
 }
