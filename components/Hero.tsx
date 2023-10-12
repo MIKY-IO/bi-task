@@ -11,7 +11,10 @@ const Hero: React.FC<IHeroProps> = (props) => {
   const { featured } = props;
 
   return (
-    <section id="home" className=" mx-auto my-0  relative ">
+    <section
+      id="home"
+      className=" mx-auto my-0  relative border-t-4 border-t-[#E5E5E5]"
+    >
       <div className="flex justify-center items-center py-6">
         <div className=" flex-1 justify-items-start place-items-start ">
           <h1 className="font-bold text-2xl ">{featured.name}</h1>

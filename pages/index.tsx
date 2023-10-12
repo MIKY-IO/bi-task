@@ -34,7 +34,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   const skip = (page - 1) * limit;
 
   const categoryString =
-    (query.category as string).length > 0 ? (query.category as string) : null;
+    (query.category as string)?.length > 0 ? (query.category as string) : null;
   const selectedCategoris = categoryString?.split(",") ?? [];
 
   const hasCategories = selectedCategoris?.length > 0 ? true : false;

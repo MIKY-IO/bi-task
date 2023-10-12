@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Head>
         <title>MikyIO-BI-task</title>
       </Head>
-      <header className="border-b-4 border-b-[#E5E5E5]">
+      <header className="">
         <Nav />
       </header>
       <main className="">{children}</main>
