@@ -1,15 +1,11 @@
-import { useEffect, useState } from "react";
-import { Description, Hero, ProductSection } from "../components";
-import { nameSorter, priceSorter, productsData } from "../data";
-import type { TProduct } from "../data";
-import {
-  GetStaticProps,
-  GetStaticPaths,
-  GetServerSidePropsContext,
-} from "next";
-import { select } from "@nextui-org/react";
 import SideFilter from "@/components/sections/SideFilter";
+import { between } from "@/utils/url";
+import { GetServerSidePropsContext } from "next";
+import { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { Description, Hero, ProductSection } from "../components";
+import type { TProduct } from "../data";
+import { nameSorter, priceRanges, priceSorter, productsData } from "../data";
 
 interface IProductProps {
   count: number;
@@ -35,20 +31,41 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
 
   const categoryString =
     (query.category as string)?.length > 0 ? (query.category as string) : null;
+  const priceRangeString =
+    (query?.priceRange as string)?.length > 0
+      ? (query.priceRange as string)
+      : null;
+
   const selectedCategoris = categoryString?.split(",") ?? [];
+  const selectedPriceRange = priceRangeString?.split(",") ?? [];
 
   const hasCategories = selectedCategoris?.length > 0 ? true : false;
+  const hasPriceRange = selectedPriceRange?.length > 0 ? true : false;
 
   const sortKey = String(query.sortKey);
 
   const sorter = sortKey === "price" ? priceSorter : nameSorter;
-  const filteredProducts = hasCategories
+
+  const filteredProductsByCategories = hasCategories
     ? productsData
-        .filter((p) => selectedCategoris.includes(p.category))
+        .filter((p) => {
+          return selectedCategoris.includes(p.category);
+        })
         .sort(sorter)
     : productsData.sort(sorter);
 
-  const newProducts = filteredProducts.slice(skip, page * limit);
+  const filteredProductsByPriceRange = hasPriceRange
+    ? filteredProductsByCategories.filter((p) => {
+        const isInRange = selectedPriceRange.some((rangekey: string) => {
+          const min = priceRanges[rangekey].min;
+          const max = priceRanges[rangekey].max;
+          return between(p.price, min, max);
+        });
+        return isInRange;
+      })
+    : filteredProductsByCategories;
+
+  const newProducts = filteredProductsByPriceRange.slice(skip, page * limit);
 
   let featured = productsData.find((item) => item?.featured);
   if (!featured) {
@@ -56,7 +73,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   }
   return {
     props: {
-      count: filteredProducts.length,
+      count: filteredProductsByPriceRange.length,
       page: Number(page),
       limit,
       skip,

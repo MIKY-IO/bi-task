@@ -10,7 +10,6 @@ const addKeyToGroup = (query: any, queryKey: string, queryValue: string) => {
 
   values.push(queryValue);
   searchParams.set(queryKey, values.join(","));
-  console.log(searchParams.getAll(queryKey));
 
   return `/?${searchParams.toString()}`;
 };
@@ -25,6 +24,12 @@ const removeKeyFromGroup = (
   values = values.filter((v) => v != queryValue);
   searchParams.set(queryKey, values.join(","));
   return `/?${searchParams.toString()}`;
+};
+
+export const between = (x: number, min: number | null, max: number | null) => {
+  const isMinOK = min == null || x >= min;
+  const isMaxOk = max == null || x <= max;
+  return isMinOK && isMaxOk;
 };
 
 export { addKeyToGroup, removeKeyFromGroup, addKey };

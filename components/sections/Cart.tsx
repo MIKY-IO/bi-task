@@ -14,10 +14,6 @@ const Cart: React.FC<{}> = () => {
     resetCart: () => void;
   } = useStateContext();
 
-  useEffect(() => {
-    console.log("hi from cart", cartItems);
-  }, [cartItems]);
-
   return (
     <div className="cart-container ">
       <div className="text-right flex justify-end items-end mt-2 mr-4">

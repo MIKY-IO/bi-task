@@ -29,7 +29,6 @@ export const CartContextProvider: React.FC<TProductContextProps> = ({
 
   const addToCart = (product: TProduct, quantity: number) => {
     const isItemInCart = cartItems.some((item) => item.id === product.id);
-    console.log(isItemInCart);
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.price * quantity
     );

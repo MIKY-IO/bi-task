@@ -63,6 +63,25 @@ export type TProduct = {
   details: string | null;
 };
 
+export const priceRanges: any = {
+  price1: {
+    min: 0,
+    max: 20,
+  },
+  price2: {
+    min: 20,
+    max: 100,
+  },
+  price3: {
+    min: 100,
+    max: 200,
+  },
+  price4: {
+    min: 200,
+    max: null,
+  },
+};
+
 export const productsData: TProduct[] = [
   {
     id: "1",

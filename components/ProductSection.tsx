@@ -33,7 +33,6 @@ const ProductSection: React.FC<TProductSectionProps> = (props) => {
     } else {
       url = addKey(router.query, "sortKey", "name");
     }
-    console.log(isNameSort);
     router.push(url);
   };
 
