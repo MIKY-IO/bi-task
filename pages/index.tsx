@@ -4,7 +4,7 @@ import { GetServerSidePropsContext } from "next";
 import { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { Description, Hero, ProductSection } from "../components";
-import type { TProduct } from "../data";
+import type { TProduct } from "../data/index.js";
 import { nameSorter, priceRanges, priceSorter, productsData } from "../data";
 
 interface IProductProps {
