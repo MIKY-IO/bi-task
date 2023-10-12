@@ -299,7 +299,7 @@ export const productsData: TProduct[] = [
   },
   {
     id: "17",
-    name: "About the Samurai King Resting",
+    name: "Samurai King Resting",
     category: "people",
     price: 10000,
     currency: "USD",

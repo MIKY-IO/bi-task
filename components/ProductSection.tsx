@@ -42,7 +42,7 @@ const ProductSection: React.FC<TProductSectionProps> = (props) => {
     router.push(url);
   };
   return (
-    <section id="products" className="mt-6  w-full">
+    <section id="products" className="mt-11  w-full">
       <div className="flex justify-between items-center max-container">
         <div className="flex justify-between gap-2">
           <h1 className="text-2xl font-bold">Photography /</h1>

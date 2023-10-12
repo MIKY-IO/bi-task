@@ -20,7 +20,7 @@ const Cart: React.FC<{}> = () => {
 
   return (
     <div className="cart-container ">
-      <div className="text-right flex justify-end items-end mt-5 mr-5">
+      <div className="text-right flex justify-end items-end mt-2 mr-4">
         <RxCross2
           className="close-cart w-7 h-7 cursor-pointer"
           onClick={() => setShowCart(false)}
@@ -30,7 +30,7 @@ const Cart: React.FC<{}> = () => {
         cartItems.map((item) => (
           <div
             key={item.id}
-            className="flex justify-between items-center mx-4 mt-4"
+            className="flex justify-between items-center mx-4 mt-2"
           >
             <div className="w-1/2">
               <h2 className="text-lg font-semibold">{item.name}</h2>
@@ -56,9 +56,11 @@ const Cart: React.FC<{}> = () => {
           </div>
         ))}
       {cartItems?.length <= 0 && (
-        <div className="flex justify-center items-center">Empty cart</div>
+        <div className="flex justify-center items-center uppercase font-bold ">
+          Empty cart
+        </div>
       )}
-      <div className="mx-4 border-b-2 border-b-[#E4E4E4] mt-4"></div>
+      <div className="mx-4 border-b-2 border-b-[#E4E4E4] mt-4 "></div>
 
       <div className="mx-4 my-4">
         <button

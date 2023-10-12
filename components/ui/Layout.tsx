@@ -14,6 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <div className="">
       <Head>
         <title>MikyIO-BI-task</title>
+        <link rel="shortcut icon" href="/favicon/favicon.ico" sizes="any" />
       </Head>
       <header className="">
         <Nav />

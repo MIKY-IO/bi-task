@@ -15,7 +15,7 @@ const Hero: React.FC<IHeroProps> = (props) => {
       id="home"
       className=" mx-auto my-0  relative border-t-4 border-t-[#E5E5E5]"
     >
-      <div className="flex justify-center items-center py-6">
+      <div className="flex justify-center items-center py-6 mt-4">
         <div className=" flex-1 justify-items-start place-items-start ">
           <h1 className="font-bold text-2xl ">{featured.name}</h1>
         </div>
@@ -31,19 +31,19 @@ const Hero: React.FC<IHeroProps> = (props) => {
                 1
               )
             }
-            className="flex justify-center items-center h-11 border text-lg bg-black text-white border-black px-2"
+            className="flex justify-center items-center h-9 border text-lg bg-black text-white border-black px-2 "
           >
-            Add To Cart
+            <p className="mx-12 uppercase"> Add To Cart</p>
           </button>
         </div>
       </div>
       <div className="relative">
         <Image
           src={featured.image?.src}
-          alt="dog"
+          alt="hero-image"
           className="w-full object-cover overflow-hidden h-120"
         />
-        <div className="absolute w-44 h-18 bottom-0 left-0 bg-white p-4">
+        <div className="absolute w-48 h-11 bottom-0 left-0 bg-white p-4">
           <p className="justify-center items-center text-center font-bold text-sm">
             Photo of the day
           </p>

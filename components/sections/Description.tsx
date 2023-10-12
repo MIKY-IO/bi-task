@@ -9,7 +9,7 @@ const Description: React.FC = () => {
   return (
     <section
       id="description"
-      className="flex flex-col mt-6 pb-10 border-b-4 border-b-[#E5E5E5] lg:flex-row lg:gap-40 relative"
+      className="flex flex-col mt-6 pb-12 border-b-4 border-b-[#E5E5E5] lg:flex-row lg:gap-40 relative"
     >
       <div className="w-full lg:w-2/3 ">
         <h1 className="font-bold text-lg mb-1">
