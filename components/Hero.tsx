@@ -19,7 +19,7 @@ const Hero: React.FC<IHeroProps> = (props) => {
         <div className=" flex-1 justify-items-start place-items-start ">
           <h1 className="font-bold text-2xl ">{featured.name}</h1>
         </div>
-        <div className="">
+        <div className=" hidden md:block">
           <button
             onClick={() =>
               addToCart(
@@ -31,7 +31,7 @@ const Hero: React.FC<IHeroProps> = (props) => {
                 1
               )
             }
-            className="flex justify-center items-center h-9 border text-lg bg-black text-white border-black px-2 "
+            className=" flex justify-center items-center h-9 border text-lg bg-black text-white border-black px-2 "
           >
             <p className="mx-12 uppercase"> Add To Cart</p>
           </button>
@@ -44,10 +44,28 @@ const Hero: React.FC<IHeroProps> = (props) => {
           className="w-full object-cover overflow-hidden h-120"
         />
         <div className="absolute w-48 h-11 bottom-0 left-0 bg-white p-4">
-          <p className="justify-center items-center text-center font-bold text-sm">
+          <p className="justify-center items-center text-center font-bold text-sm ">
             Photo of the day
           </p>
         </div>
+      </div>
+
+      <div className="md:hidden my-8  ">
+        <button
+          onClick={() =>
+            addToCart(
+              {
+                name: featured.name,
+                image: featured.image.src,
+                price: featured.price,
+              },
+              1
+            )
+          }
+          className=" flex justify-center items-center h-full w-full border text-lg bg-black text-white border-black  "
+        >
+          <p className="uppercase my-2 "> Add To Cart</p>
+        </button>
       </div>
     </section>
   );

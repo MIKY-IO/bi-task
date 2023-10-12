@@ -29,7 +29,7 @@ const Description: React.FC = () => {
             provide placeholder
           </p>
           <br />
-          <p>
+          <p className="hidden lg:block">
             text to mockup various fonts for a type specimen book.So how did the
             classical Latin become so incoherent? According to McClintock.
           </p>
@@ -39,10 +39,22 @@ const Description: React.FC = () => {
         <div className="mb-4">
           <h1 className="font-bold text-lg mt-4 ">People also buy</h1>
         </div>
-        <div className="grid grid-cols-3 gap-4 mb-4">
-          <Image src={smallOne} alt="product1" className="w-full lg:w-auto" />
-          <Image src={smallTwo} alt="product2" className="w-full lg:w-auto" />
-          <Image src={smallThree} alt="product3" className="w-full lg:w-auto" />
+        <div className="grid grid-cols-3 gap-6 mb-4 ">
+          <Image
+            src={smallOne}
+            alt="product1"
+            className="w-full lg:w-auto sm:w-auto"
+          />
+          <Image
+            src={smallTwo}
+            alt="product2"
+            className="w-full lg:w-auto  sm:w-auto"
+          />
+          <Image
+            src={smallThree}
+            alt="product3"
+            className="w-full lg:w-auto sm:w-auto"
+          />
         </div>
         <h1 className="font-bold text-lg mb-4">Details</h1>
         <p className="text-sm mb-2">Size: 1020 X 1020 pixel</p>
