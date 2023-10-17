@@ -44,7 +44,7 @@ const ProductSection: React.FC<TProductSectionProps> = (props) => {
     <section id="products" className="mt-11  w-full">
       <div className="flex justify-between items-center max-container">
         <div className="flex justify-between gap-2">
-          <h1 className="lg>text-2xl font-bold md:text-xl">Photography /</h1>
+          <h1 className="lg:text-2xl font-bold md:text-xl">Photography /</h1>
           <h1 className="lg:text-2xl text-[#656565] md:text-xl">
             Premium Photos
           </h1>

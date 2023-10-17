@@ -42,7 +42,7 @@ const SideFilter = () => {
   return (
     <section className="w-full h-full overflow-y-auto px-20 md:px-0">
       <div className="flex-col text-left space-y-5 pb-10 ">
-        <h2 className="text-xl font-bold">Category</h2>.
+        <h2 className="text-xl font-bold">Category</h2>
         <Checkbox
           name="people"
           label="People"
