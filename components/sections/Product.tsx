@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import Image, { StaticImageData } from "next/image";
-import { useStateContext } from "../../context/StateContext";
 import { TProduct } from "@/data";
+import Image from "next/image";
+import React from "react";
+import { useStateContext } from "../../context/StateContext";
 
 type TProductProps = TProduct;
 
@@ -50,9 +50,9 @@ const Product: React.FC<TProductProps> = ({
         </div>
       </div>
 
-      <p className="font-bold text-lg text-[#656565]">{category}</p>
-      <p className="font-bold text-2xl">{name}</p>
-      <p className="font-bold text-lg text-[#656565]">${price}</p>
+      <p className="font-bold text-xl text-[#656565]">{category}</p>
+      <p className="font-bold text-3xl">{name}</p>
+      <p className="mt-2 text-3xl text-[#656565]">${price}</p>
     </div>
   );
 };
